@@ -1,0 +1,682 @@
+<!doctype html>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>cars</title>
+		<style media="screen">
+			body{
+				padding: 0;
+				margin: 0;
+				height: 100vh;
+				background-color: darkslategrey;
+
+				
+			}
+			.main-div{
+				height: 50%;
+				width: 43%;
+				margin: 35px 3%;
+				overflow: hidden;
+				position: relative;
+				
+				
+				background-color: darkslategrey;
+			}
+		
+			
+			.main-div .sub-div{
+				height: calc(20% - 10px);
+				width: 100%;
+				display: flex;
+				align-items: flex-start;
+				justify-content: space-between;
+				position: absolute;
+				bottom: 4px;
+				left: 0;
+				
+			}
+			.main-div .sub-div > img{
+				height:  100%;
+				width: calc(20% - 5px);
+				border: 1px solid black;
+				border-radius: 1em 1em 1em 1em ;
+				object-fit: cover;
+				cursor: pointer;
+				box-shadow: 0px 0px 0px #333;
+			}
+			.main-div .sub-div > img:hover{
+				filter: grayscale(50%);
+				border: 2px solid darkred;
+			}
+			.big-screen{
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: calc(80% - 10px);
+				width: calc(100% - 7px);
+				
+				
+			}
+			.big-screen > img{
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+				border: 2px black;
+				border-radius: 2em 2em 2em 2em;
+			}
+			.top{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-evenly;
+				background-color: black;
+				font-size: 22px;
+				color: white;
+				width: 100%;
+			}
+		
+		
+			.car{
+
+		
+			color: white;
+			font-family: Arial, Helvetica, sans-serif;
+			letter-spacing: 2px;
+			font-size: 25px;
+			font-weight: 700;
+			text-align: center;
+
+			}
+				
+			
+			.mod{
+				
+				font-size: 16px;
+				margin: 30px 15px 15px 3px
+			}
+			.mod:hover{
+				color: gold;
+				cursor: pointer;
+			}
+		.col{
+			font-size: 16px;
+				margin: 30px 15px 15px -5px
+			}
+			.col:hover{
+				color: gold;
+				cursor: pointer;
+			}
+			
+				.con{
+					font-size: 15px;
+				margin: 30px 15px 15px 0px;
+					
+				}
+				.con:hover{
+				color: gold;
+				cursor: pointer;
+			}
+		
+					.line{
+				width: 100%;
+				height: 2px;
+				background-color: white;
+				position: relative;
+				top: 0px
+
+			}
+	
+			.mine{                
+				font-size: 15px;
+				margin: 31px 15px 15px 3px;
+			}
+			.mine:hover{
+				color: gold;
+				cursor: pointer;
+			}
+			
+			.pix{
+				
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				font-size: 15px;
+				margin: 20px 15px 15px 3px
+				
+			}
+			
+						.query{
+				line-height: 3px;
+				color: white;
+				font-size: 20px;
+				position: relative;
+				bottom: 5px;
+				
+			
+			}
+			.right{
+	             position: absolute;
+				 bottom: 18%;
+				 left: 48%;
+				 width: 100%
+			}
+			
+				
+			.sale{
+				
+				font-size: 25px;
+				color: #800000;
+				font-family: monospace;
+				font-weight: 500;
+				word-spacing: -10px;
+		      position: relative;
+			  top: 22px;
+			}	
+			.lim{
+				color: white;
+				font-size: 25px;
+				font-weight: 600;
+				margin: 10px 10px 10px 0px;
+				font-family: serif;
+				line-height: 20px;
+			}
+			
+			button{
+				background-color: #800000;
+				color: white;
+				border: 1px solid #800;
+				
+			}
+			.butt{
+				position: relative;
+				padding-top: 2px;
+				padding-left: 5px;
+				bottom: 8px;
+				border-radius: 0.3em 0.3em 0.3em 0.3em;
+			}
+			.butt:hover{
+				cursor: pointer;
+				
+			}
+			
+			.buttu{
+				padding-top: 4px;
+				padding-right: 10px;
+				padding-left: 10px;
+				padding-bottom: 4px;
+				border-radius: 0.4em;
+				position: relative;
+				bottom: 55px;
+			}
+			.buttu:hover{
+		         
+				cursor: pointer;
+			}
+			
+			
+			.butto{
+				padding-top: 4px;
+				padding-right: 5px;
+				padding-left: 5px;
+				padding-bottom: 4px;
+				border-radius: 0.4em;
+				position: relative;
+				bottom: 55px;
+				word-spacing: 10px;
+			}
+			.butto:hover{
+		         width: 80px;
+				cursor: pointer;
+			}
+			
+			.money{
+				font-weight: 700;
+				font-size: 25px;
+				color: white;
+				position: relative;
+				bottom: 15px;
+			}
+			
+			.moni{
+				position: relative;
+				bottom: 40px;   
+				
+				color: white;
+			}
+			
+			@media (min-height: 700px) and (max-height: 770px){
+				.right{
+					position: absolute;
+					bottom: 23%;
+				}
+			}
+			@media (min-height: 800px){
+				.right{
+					position: absolute;
+					bottom: 32%;
+
+				}
+				.main-div{
+					height: 40%;
+					position: relative;
+					top: 5%;
+				}
+			}
+			@media (min-height: 900px){
+				.right{
+					position: absolute;
+					bottom: 35%;
+
+				}
+				.main-div{
+					height: 40%;
+					position: relative;
+					top: 5%;
+				}
+			}
+			@media (min-height: 1000px){
+				.right{
+					position: absolute;
+					bottom: 40%;
+
+				}
+				.main-div{
+					height: 40%;
+					position: relative;
+					top: 5%;
+				}
+			}
+			@media (min-width: 700px){
+				.main-div{
+					height: 60%;
+				}
+				.right{
+					position: relative;
+					bottom: 48%;
+					left: 55%; 
+
+				}
+				.sale{
+					font-size: 35px;
+			
+				font-family: monospace;
+				font-weight: 500;
+				word-spacing: -10px;
+		      position: relative;
+			  top: 22px;	
+				}
+				.lim{
+					color: white;
+				font-size: 45px;
+				font-weight: 600;
+				margin: 10px 10px 10px 0px;
+				font-family: serif;
+				line-height: 30px;
+				}
+				.query{
+					line-height: 5px;
+				color: white;
+				font-size: 25px;
+				position: relative;
+				bottom: 5px;
+					
+				}
+				.money{
+					font-weight: 700;
+				font-size: 45px;
+				color: white;
+				position: relative;
+				bottom: 45px;
+				}
+				.moni{
+					position: relative;
+				bottom: 100px;   
+				font-size: 20px;
+				color: white;
+				}
+				.buttu{
+					padding-top: 10px;
+				padding-right: 45px;
+				padding-left: 45px;
+				padding-bottom: 10px;
+				border-radius: 0.4em;
+				position: relative;
+				bottom: 105px;	
+				left: 15px;
+				}
+				.butto{
+					padding-top: 10px;
+				padding-right: 20px;
+				padding-left: 20px;
+				padding-bottom: 10px;
+				border-radius: 0.4em;
+				position: relative;
+				bottom: 105px;
+				word-spacing: 10px;
+				}
+				.main-div{
+					height: 70%;
+					width: 45%;
+					position: relative;
+					top: 5%;
+				}
+			}
+			@media (min-width: 800px) and (min-height: 1000px){
+				.main-div{
+					height: 55%;
+					width: 45%;
+				}
+
+				.right{
+					position: relative;
+					bottom: 55%;
+					left: 55%; 
+
+				}
+				.sale{
+					font-size: 45px;
+			
+				font-family: monospace;
+				font-weight: 600;
+				word-spacing: -10px;
+		      position: relative;
+			  top: 30px;	
+				}
+				.lim{
+					color: white;
+				font-size: 55px;
+				font-weight: 600;
+	            position: relative;
+				bottom: 5px;
+				font-family: serif;
+				line-height: 40px;
+				}
+				.query{
+					line-height: 7px;
+				color: white;
+				font-size: 30px;
+				position: relative;
+				bottom: 5px;
+					
+				}
+				.money{
+					font-weight: 700;
+				font-size: 55px;
+				color: white;
+				position: relative;
+				bottom: 45px;
+				}
+				.moni{
+					position: relative;
+				bottom: 105px;   
+				font-size: 20px;
+				color: white;
+				}
+				.buttu{
+					padding-top: 15px;
+				padding-right: 50px;
+				padding-left: 50px;
+				padding-bottom: 15px;
+				border-radius: 0.4em;
+				position: relative;
+				bottom: 105px;	
+				left: 15px;
+				}
+				.butto{
+					padding-top: 15px;
+				padding-right: 25px;
+				padding-left: 25px;
+				padding-bottom: 15px;
+				border-radius: 0.4em;
+				position: relative;
+				bottom: 105px;
+				word-spacing: 10px;
+				
+				}
+			}
+			@media (min-width: 1100px){
+				
+			.car{
+
+		
+color: white;
+font-family: Arial, Helvetica, sans-serif;
+letter-spacing: 2px;
+font-size: 35px;
+font-weight: 700;
+text-align: center;
+
+}
+	
+
+.mod{
+	
+	font-size: 22px;
+	margin: 30px 15px 15px 3px
+}
+
+.col{
+font-size: 22px;
+	margin: 30px 15px 15px -5px
+}
+
+
+	.con{
+		font-size: 22px;
+	margin: 30px 15px 15px 0px;
+		
+	}
+	.mine{
+		font-size: 22px;
+		margin: 30px 15px 15px 0px;
+	}
+	
+				.right{
+					position: relative;
+					bottom: 70%;
+					left: 52%; 
+
+				}
+				.sale{
+					font-size: 50px;
+			
+				font-family: monospace;
+				font-weight: 500;
+				word-spacing: -10px;
+		      position: relative;
+			  top: 50px;	
+				}
+				.lim{
+					color: white;
+				font-size: 50px;
+				font-weight: 600;
+				font-family: serif;
+				line-height: 30px;
+				}
+				.query{
+					line-height: 5px;
+				color: white;
+				font-size: 25px;
+				position: relative;
+				bottom: 5px;
+					
+				}
+				.money{
+					font-weight: 700;
+				font-size: 50px;
+				color: white;
+				position: relative;
+				bottom: 45px;
+				}
+				.moni{
+					position: relative;
+				bottom: 100px;   
+				font-size: 20px;
+				color: white;
+				}
+				.buttu{
+					padding-top: 10px;
+				padding-right: 45px;
+				padding-left: 45px;
+				padding-bottom: 10px;
+				border-radius: 0.4em;
+				position: relative;
+				bottom: 105px;	
+				left: 15px;
+				}
+				.butto{
+					padding-top: 10px;
+				padding-right: 20px;
+				padding-left: 20px;
+				padding-bottom: 10px;
+				border-radius: 0.4em;
+				position: relative;
+				bottom: 105px;
+				word-spacing: 10px;
+				}
+				.main-div{
+					height: 60%;
+					width: 45%;
+					position: relative;
+					top: 5%;
+				}
+			}
+			@media (min-width: 910px) and (min-height: 1290px){
+				
+				.right{
+					position: relative;
+					bottom: 48%;
+					left: 55%; 
+
+				}
+				.sale{
+					font-size: 55px;
+			
+				font-family: monospace;
+				font-weight: 500;
+				word-spacing: -10px;
+		      position: relative;
+			  top: 30px;	
+				}
+				.lim{
+					color: white;
+				font-size: 55px;
+				font-weight: 600;
+				margin: 10px 10px 10px 0px;
+				font-family: serif;
+				line-height: 35px;
+				}
+				.query{
+					line-height: 5px;
+				color: white;
+				font-size: 30px;
+				position: relative;
+				bottom: 5px;
+					
+				}
+				.money{
+					font-weight: 700;
+				font-size: 55px;
+				color: white;
+				position: relative;
+				bottom: 45px;
+				}
+				.moni{
+					position: relative;
+				bottom: 105px;   
+				font-size: 20px;
+				color: white;
+				}
+				.buttu{
+					padding-top: 15px;
+				padding-right: 55px;
+				padding-left: 55px;
+				padding-bottom: 15px;
+				border-radius: 0.4em;
+				position: relative;
+				bottom: 105px;	
+				left: 15px;
+				}
+				.butto{
+					padding-top: 15px;
+				padding-right: 30px;
+				padding-left:30px;
+				padding-bottom: 15px;
+				border-radius: 0.4em;
+				position: relative;
+				bottom: 105px;
+				word-spacing: 10px;
+				}
+				.main-div{
+					height: 50%;
+					width: 45%;
+					position: relative;
+					top: 5%;
+				}
+				.main-div .sub-div > img{
+                 height: 90%;
+		
+					}
+				}
+				@media (min-width: 950px) and (max-width: 1024px){
+					.right{
+						position: relative;
+						bottom: 72%;
+					}
+				}
+	
+		</style>
+		
+	</head>
+	<body>
+		
+		<div class="top">
+			
+				
+				<p class="mod">Models</p>
+				<p class="col">Collections</p>
+				<p class="con">Contact</p>
+				
+	
+				
+				<p class ="mine">Select</p>
+					<img src="https://images.pexels.com/photos/6900594/pexels-photo-6900594.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="pix">
+				
+				</div>
+			
+			<div class="line"></div>
+			<h3 class="car">VINTAGE WHEELS</h3>
+			
+		<div class="main-div">
+			<div class="big-screen">
+				<img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id="item">
+			</div>
+			<div class="sub-div">
+			<img  src="https://images.pexels.com/photos/6780773/pexels-photo-6780773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" onclick="document.getElementById('item').src='https://images.pexels.com/photos/6780773/pexels-photo-6780773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'">
+            <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" onclick="document.getElementById('item').src='https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'">
+				<img src="https://images.pexels.com/photos/627680/pexels-photo-627680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" onclick="document.getElementById('item').src='https://images.pexels.com/photos/627680/pexels-photo-627680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'">
+				<img src="https://images.pexels.com/photos/631522/pexels-photo-631522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" onclick="document.getElementById('item').src='https://images.pexels.com/photos/631522/pexels-photo-631522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'">
+		</div>
+	</div>
+	<div class="right">
+		<p class="sale">CARS FOR SALE</p>
+		<p class='lim'>Limited Bonus </p><p class="lim">Offer</p>
+		<div class="query">
+		<p>get the best car </p><p>deals at wheeels </p><p>we have a wide variety </p><p></p>ranging from vintage</p>
+		<p>cars to sport cars</p>
+		<p>feel the fun!</p></div>
+		<div class="jqu">
+		<p class="money">$10000000 <button class="butt">-50%</button></p>
+		<p class="moni"><s>$20000000</s></p>
+		
+			<button class="butto">-  +  -</button>
+			<button class="buttu">add to cart</button>
+		</div>	
+		
+	</div>
+    </body>
+	
+
+	
+	</html>
